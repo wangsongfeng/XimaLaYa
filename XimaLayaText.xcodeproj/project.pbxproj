@@ -124,6 +124,9 @@
 		185A568C1E98CCC0005BDCE9 /* DownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A568B1E98CCC0005BDCE9 /* DownLoadViewController.m */; };
 		1865F7CA1F4346C900C78CA1 /* FocusImgScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1865F7C71F4346C900C78CA1 /* FocusImgScrollView.m */; };
 		1865F7CD1F43471400C78CA1 /* ContentShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1865F7CC1F43471400C78CA1 /* ContentShowView.m */; };
+		18B1763F1F5FF60E00C7E5AE /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B1763E1F5FF60E00C7E5AE /* TitleView.m */; };
+		18B176461F5FF8F300C7E5AE /* UIButton+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B176421F5FF8F300C7E5AE /* UIButton+Layout.m */; };
+		18B176471F5FF8F300C7E5AE /* YLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B176451F5FF8F300C7E5AE /* YLButton.m */; };
 		18B404DB1F3F56B000A31835 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B404DA1F3F56B000A31835 /* HomePageViewController.m */; };
 		18B404DE1F3F56CE00A31835 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B404DD1F3F56CE00A31835 /* CategoryViewController.m */; };
 		18B404E11F3F56E500A31835 /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B404E01F3F56E500A31835 /* LiveViewController.m */; };
@@ -390,6 +393,12 @@
 		1865F7C71F4346C900C78CA1 /* FocusImgScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusImgScrollView.m; sourceTree = "<group>"; };
 		1865F7CB1F43471400C78CA1 /* ContentShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentShowView.h; sourceTree = "<group>"; };
 		1865F7CC1F43471400C78CA1 /* ContentShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentShowView.m; sourceTree = "<group>"; };
+		18B1763D1F5FF60E00C7E5AE /* TitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleView.h; sourceTree = "<group>"; };
+		18B1763E1F5FF60E00C7E5AE /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
+		18B176411F5FF8F300C7E5AE /* UIButton+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Layout.h"; sourceTree = "<group>"; };
+		18B176421F5FF8F300C7E5AE /* UIButton+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Layout.m"; sourceTree = "<group>"; };
+		18B176441F5FF8F300C7E5AE /* YLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLButton.h; sourceTree = "<group>"; };
+		18B176451F5FF8F300C7E5AE /* YLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLButton.m; sourceTree = "<group>"; };
 		18B404D91F3F56B000A31835 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
 		18B404DA1F3F56B000A31835 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		18B404DC1F3F56CE00A31835 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
@@ -787,6 +796,8 @@
 		1846C6501F42D764009C345F /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				18B176401F5FF8F300C7E5AE /* UIButton+Layout */,
+				18B176431F5FF8F300C7E5AE /* YLButton */,
 				1846C6511F42D78C009C345F /* MBProgressHUD+HR.h */,
 				1846C6521F42D78C009C345F /* MBProgressHUD+HR.m */,
 			);
@@ -961,6 +972,8 @@
 			children = (
 				183070FD1EA7A241006B8698 /* PlayView.h */,
 				183070FE1EA7A241006B8698 /* PlayView.m */,
+				18B1763D1F5FF60E00C7E5AE /* TitleView.h */,
+				18B1763E1F5FF60E00C7E5AE /* TitleView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1148,6 +1161,24 @@
 			children = (
 			);
 			path = "主播";
+			sourceTree = "<group>";
+		};
+		18B176401F5FF8F300C7E5AE /* UIButton+Layout */ = {
+			isa = PBXGroup;
+			children = (
+				18B176411F5FF8F300C7E5AE /* UIButton+Layout.h */,
+				18B176421F5FF8F300C7E5AE /* UIButton+Layout.m */,
+			);
+			path = "UIButton+Layout";
+			sourceTree = "<group>";
+		};
+		18B176431F5FF8F300C7E5AE /* YLButton */ = {
+			isa = PBXGroup;
+			children = (
+				18B176441F5FF8F300C7E5AE /* YLButton.h */,
+				18B176451F5FF8F300C7E5AE /* YLButton.m */,
+			);
+			path = YLButton;
 			sourceTree = "<group>";
 		};
 		18B404D81F3F569A00A31835 /* Controllers */ = {
@@ -1362,6 +1393,7 @@
 				183071E31EA7A576006B8698 /* MJRefreshGifHeader.m in Sources */,
 				183071E21EA7A576006B8698 /* MJRefreshBackStateFooter.m in Sources */,
 				183071C51EA7A575006B8698 /* ViewController+MASAdditions.m in Sources */,
+				18B176471F5FF8F300C7E5AE /* YLButton.m in Sources */,
 				1846C64E1F42D2A2009C345F /* iCarousel.m in Sources */,
 				18B404EA1F3F571E00A31835 /* AnchorViewController.m in Sources */,
 				183071C31EA7A575006B8698 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -1385,6 +1417,7 @@
 				185A56891E98CCB2005BDCE9 /* MeViewController.m in Sources */,
 				183F384E1F442149009866E2 /* FindPutViewCell.m in Sources */,
 				185A56641E98CB70005BDCE9 /* TabBarViewController.m in Sources */,
+				18B1763F1F5FF60E00C7E5AE /* TitleView.m in Sources */,
 				183071E91EA7A576006B8698 /* UIScrollView+MJRefresh.m in Sources */,
 				1846C68E1F42DBD9009C345F /* UIImage+WebP.m in Sources */,
 				183071DB1EA7A575006B8698 /* MJRefreshFooter.m in Sources */,
@@ -1398,6 +1431,7 @@
 				183071C01EA7A575006B8698 /* MASViewAttribute.m in Sources */,
 				183071E01EA7A575006B8698 /* MJRefreshBackGifFooter.m in Sources */,
 				183071F11EA7A576006B8698 /* WMProgressView.m in Sources */,
+				18B176461F5FF8F300C7E5AE /* UIButton+Layout.m in Sources */,
 				183071F21EA7A576006B8698 /* WMPageController.m in Sources */,
 				183071BF1EA7A575006B8698 /* MASLayoutConstraint.m in Sources */,
 				1846C6851F42DBD9009C345F /* SDWebImageCompat.m in Sources */,
@@ -1579,8 +1613,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W5PE2ZM23A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/apple/Desktop/XimaLayaText/XimaLayaText/公有类/XimaLayaText.pch";
-				INFOPLIST_FILE = /Users/apple/Desktop/XimaLayaText/XimaLayaText/AppDelegate/Info.plist;
+				GCC_PREFIX_HEADER = "/Users/apple/Desktop/喜马拉雅/XimaLayaText/公有类/XimaLayaText.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/XimaLayaText/AppDelegate/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = oufei.com.XimaLayaText;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1593,8 +1627,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W5PE2ZM23A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/apple/Desktop/XimaLayaText/XimaLayaText/公有类/XimaLayaText.pch";
-				INFOPLIST_FILE = /Users/apple/Desktop/XimaLayaText/XimaLayaText/AppDelegate/Info.plist;
+				GCC_PREFIX_HEADER = "/Users/apple/Desktop/喜马拉雅/XimaLayaText/公有类/XimaLayaText.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/XimaLayaText/AppDelegate/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = oufei.com.XimaLayaText;
 				PRODUCT_NAME = "$(TARGET_NAME)";

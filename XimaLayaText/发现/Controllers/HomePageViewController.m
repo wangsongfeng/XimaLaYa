@@ -11,7 +11,7 @@
 #import "HomePageViewModel.h"
 #import "FindPutViewCell.h"
 #import "SpecialTableViewCell.h"
-@interface HomePageViewController ()<UITableViewDelegate,UITableViewDataSource,iCarouselDelegate,iCarouselDataSource>
+@interface HomePageViewController ()<UITableViewDelegate,UITableViewDataSource,iCarouselDelegate,iCarouselDataSource,TitleViewDelegate>
 {
     UIPageControl *_pageControl;
     // 定义热门类或三个图片按钮的FindPutCell高
@@ -103,7 +103,7 @@
 #pragma mark - UITableViewDelegate
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return self.pageViewModel.section;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section==0) {
@@ -111,7 +111,7 @@
     }else if (section==1){
         return self.pageViewModel.specialCount;
     }else{
-        return 0;
+        return 1;
     }
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -126,6 +126,25 @@
     }else{
         FindPutViewCell * cell=[tableView dequeueReusableCellWithIdentifier:@"FindPutCell"];
         _hotCellHeight=cell.cellHeight;
+        
+        //第一个按钮
+        cell.clickBtn0.titleLable.text=[self.pageViewModel titleForSection:indexPath.section index:0];
+        [cell.clickBtn0.contentImageView sd_setImageWithURL:[self.pageViewModel coverURLForSection:indexPath.section index:0] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_3"]];
+        cell.clickBtn0.tag=indexPath.section*10+0;
+        cell.detailLb0.text=[self.pageViewModel trackTitleForSection:indexPath.section index:0];
+        
+        cell.clickBtn1.titleLable.text=[self.pageViewModel titleForSection:indexPath.section index:1];
+        [cell.clickBtn1.contentImageView sd_setImageWithURL:[self.pageViewModel coverURLForSection:indexPath.section index:1] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_3"]];
+        cell.clickBtn1.tag=indexPath.section*10+1;
+        cell.detailLb1.text=[self.pageViewModel trackTitleForSection:indexPath.section index:1];
+        
+        cell.clickBtn2.titleLable.text=[self.pageViewModel titleForSection:indexPath.section index:2];
+        [cell.clickBtn2.contentImageView sd_setImageWithURL:[self.pageViewModel coverURLForSection:indexPath.section index:2] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_3"]];
+        cell.clickBtn2.tag=indexPath.section*10+2;
+        cell.detailLb2.text=[self.pageViewModel trackTitleForSection:indexPath.section index:2];
+        
+
+        
         return cell;
     }
     
@@ -138,12 +157,20 @@
         return _hotCellHeight;
     }
 }
+
+#pragma mark 表头视图高度
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 20;
+    return 35;
+}
+#pragma mark 表尾视图高度
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0;
 }
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView * view=[[UIView alloc]init];
-    view.backgroundColor=[UIColor yellowColor];
-    return view;
+    TitleView *moreView = [[TitleView alloc] initWithTitle:[self.pageViewModel mainTitleForSection:section] hasMore:[self.pageViewModel hasMoreForSection:section]];
+    // 定义TitleView的tag  可以通过tag知section
+    moreView.tag = section;
+    moreView.delegate = self;
+    return moreView;
 }
 @end

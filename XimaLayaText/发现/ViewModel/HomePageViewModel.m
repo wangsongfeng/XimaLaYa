@@ -21,6 +21,9 @@
    self.dataTask=[HomePageNetManager getHomePageCompletionHanader:^(HomePageModel * responseObject, NSError *error) {
        
        self.model=responseObject;
+       
+       self.hotRecommendsArr=responseObject.hotRecommends.list;
+       self.section=self.hotRecommendsArr.count+2;
 
        completed(error);
               
@@ -33,7 +36,19 @@
     }else if (section==1){
         return self.model.specialColumn.title;
     }else{
-        return nil;
+        return  self.model.hotRecommends.list[section-2].title;
+    }
+}
+
+- (BOOL)hasMoreForSection:(NSInteger)section {
+    if (section == 0) {  // 小编推荐
+        return self.model.editorRecommendAlbums.hasMore;
+    } else if (section == 1) {  //精品听单
+        return self.model.specialColumn.hasMore;
+    } else if (section == 2) {  // 发现新奇
+        return YES;
+    }else{
+        return YES;
     }
 }
 //图片
@@ -44,7 +59,7 @@
     }else if (section==1){
         path=self.model.specialColumn.list[index].coverPath;
     }else{
-        return nil;
+        path = self.model.hotRecommends.list[section - 2].list[index].coverLarge;
     }
     return [NSURL URLWithString:path];
 }
@@ -55,7 +70,7 @@
     }else if (section==1){
         return self.model.specialColumn.list[index].title;
     }else{
-        return nil;
+        return self.model.hotRecommends.list[section - 2].list[index].title;
     }
 
 }
@@ -66,7 +81,7 @@
     }else if (section==1){
         return self.model.specialColumn.list[index].subtitle;
     }else{
-        return nil;
+        return self.model.hotRecommends.list[section - 2].list[index].trackTitle;
     }
 
 }
@@ -97,4 +112,5 @@
 -(NSInteger)specialCount{
     return self.model.specialColumn.list.count;
 }
+
 @end

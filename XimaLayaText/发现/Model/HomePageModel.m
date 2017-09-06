@@ -56,3 +56,24 @@
 
 @end
 
+
+
+
+@implementation HotR
+
++ (NSDictionary *)objectClassInArray{
+    return @{@"list" : [HotRList class]};
+}
+@end
+
+@implementation HotRList
+
++ (NSDictionary *)objectClassInArray{
+    return @{@"list" : [HotR_List_List class]};
+}
+
+@end
+
+@implementation HotR_List_List
+
+@end

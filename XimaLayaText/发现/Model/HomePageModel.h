@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "BaseModel.h"
 
-@class FocusImageView,FocusImageList,EditorRA,EditorRAList,SpecialC,SpecialCList;
+@class FocusImageView,FocusImageList,EditorRA,EditorRAList,SpecialC,SpecialCList,HotR,HotRList,HotR_List_List;
 @interface HomePageModel :BaseModel
 
 @property(nonatomic,strong)FocusImageView*focusImages;
 @property(nonatomic,strong)EditorRA * editorRecommendAlbums;
 @property(nonatomic,strong)SpecialC * specialColumn;
+
+@property (nonatomic,strong) HotR * hotRecommends;
+
 @end
 
 
@@ -111,4 +114,54 @@
 @property (nonatomic, copy) NSString *footnote;
 
 @property (nonatomic, assign) NSInteger columnType;
+
+@end
+
+//热门推荐
+@interface HotR : BaseModel
+@property (nonatomic,assign) NSInteger ret;
+@property (nonatomic,copy) NSString * title;
+@property (nonatomic,strong) NSArray<HotRList*>*list;
+
+@end
+
+@interface HotRList : BaseModel
+@property (nonatomic, assign) BOOL hasMore;
+
+@property (nonatomic, copy) NSString *contentType;
+
+@property (nonatomic, copy) NSString *title;
+
+@property (nonatomic, assign) BOOL isFinished;
+
+@property (nonatomic, assign) NSInteger categoryId;
+
+@property (nonatomic, assign) NSInteger count;
+
+@property (nonatomic, strong) NSArray<HotR_List_List *> *list;
+
+@end
+
+@interface HotR_List_List : BaseModel
+
+@property (nonatomic, assign) NSInteger tracks;
+
+@property (nonatomic, assign) NSInteger serialState;
+
+@property (nonatomic, assign) NSInteger albumId;
+
+@property (nonatomic, assign) NSInteger trackId;
+
+@property (nonatomic, assign) NSInteger isFinished;
+
+@property (nonatomic, copy) NSString *title;
+
+@property (nonatomic, copy) NSString *trackTitle;
+
+@property (nonatomic, copy) NSString *coverLarge;
+
+@property (nonatomic, copy) NSString *tags;
+
+@property (nonatomic, assign) NSInteger playsCounts;
+
 @end

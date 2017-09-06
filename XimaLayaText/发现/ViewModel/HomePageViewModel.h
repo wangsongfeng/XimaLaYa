@@ -23,6 +23,10 @@
 #pragma mark 给三个图片的cell设置各个属性
 
 -(NSString*)mainTitleForSection:(NSInteger)section;
+- (BOOL)hasMoreForSection:(NSInteger)section;
+
+
+
 //图片
 -(NSURL*)coverURLForSection:(NSInteger)section index:(NSInteger)index;
 //蒙版标题
@@ -34,6 +38,7 @@
 @property(nonatomic,assign)BOOL exitsScrollView;
 
 @property(nonatomic,assign)NSInteger FocusImgNumber;
+
 
 -(NSURL*)focusImgURLForIndex:(NSInteger)index;
 
